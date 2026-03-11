@@ -1,0 +1,17 @@
+@import "./Variable";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: $bg-color;
+  color: white;
+}
