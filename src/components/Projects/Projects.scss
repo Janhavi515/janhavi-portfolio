@@ -1,0 +1,11 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .project-card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 10px;
+  }

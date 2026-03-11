@@ -1,4 +1,4 @@
-@import "./Variable";
+// @import "./Variable";
 
 * {
   margin: 0;
@@ -6,12 +6,18 @@
   box-sizing: border-box;
 }
 
-html, body {
-  scroll-behavior: smooth;
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
 }
 
-body {
-  font-family: "Inter", sans-serif;
-  background: $bg-color;
-  color: white;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 100px 10%;
 }
