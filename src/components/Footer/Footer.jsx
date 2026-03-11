@@ -1,7 +1,11 @@
 import "./Footer.scss";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer className="footer">
+      <p>© 2026 Janhavi Malushte</p>
+    </footer>
+  );
 };
 
 export default Footer;
