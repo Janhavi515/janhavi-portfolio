@@ -1,18 +1,35 @@
 import "./Projects.scss";
 
 const Projects = () => {
+  const projects = [
+    {
+      title: "Patent Research Platform",
+      description:
+        "A web platform for searching and analyzing patent data with filters and analytics.",
+      tech: "React, JavaScript, REST API",
+    },
+    {
+      title: "Portfolio Website",
+      description:
+        "Personal developer portfolio built with React and SCSS showcasing projects and skills.",
+      tech: "React, SCSS",
+    },
+  ];
+
   return (
     <section id="projects" className="projects">
       <h2>Projects</h2>
 
-      <div className="project-card">
-        <h3>Portfolio Website</h3>
-        <p>Personal portfolio built using React and SCSS.</p>
-      </div>
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div className="project-card" key={index}>
+            <h3>{project.title}</h3>
 
-      <div className="project-card">
-        <h3>React Dashboard</h3>
-        <p>Interactive dashboard UI built with React.</p>
+            <p>{project.description}</p>
+
+            <span>{project.tech}</span>
+          </div>
+        ))}
       </div>
     </section>
   );
