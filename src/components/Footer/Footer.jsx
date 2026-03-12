@@ -3,7 +3,11 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>© 2026 Janhavi Malushte</p>
+
+      <p>© {new Date().getFullYear()} Janhavi Malushte</p>
+
+      <p>Built with React</p>
+
     </footer>
   );
 };
