@@ -1,7 +1,44 @@
-.contact-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    border: 1px solid #38bdf8;
-    color: #38bdf8;
-  }
+// .contact-btn {
+//     display: inline-block;
+//     margin-top: 20px;
+//     padding: 12px 24px;
+//     border: 1px solid #38bdf8;
+//     color: #38bdf8;
+//   }
+
+.contact {
+  padding: 100px 10%;
+  text-align: center;
+  background: #020617;
+  color: #e2e8f0;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links a {
+  padding: 12px 25px;
+  border: 1px solid #38bdf8;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: #38bdf8;
+  color: #020617;
+}

@@ -27,7 +27,7 @@ const Hero = () => {
 
       <div className="social-icons">
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/Janhavi515"
           target="_blank"
           rel="noopener noreferrer"
         >
