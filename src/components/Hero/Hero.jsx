@@ -16,11 +16,20 @@ const Hero = () => {
       </p>
 
       <div className="hero-buttons">
-        <a href="#projects" className="hero-btn">
-          View Projects
+        <a
+          href="/Janhavi_Malushte_Frontend_Developer.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-btn"
+        >
+          View Resume
         </a>
 
-        <a href="/resume.pdf" className="resume-btn">
+        <a
+          href="/Janhavi_Malushte_Frontend_Developer.pdf"
+          download
+          className="resume-btn"
+        >
           Download Resume
         </a>
       </div>
