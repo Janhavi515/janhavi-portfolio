@@ -1,56 +1,100 @@
 import "./Hero.scss";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const Hero = () => {
+  const name = "Janhavi Malushte";
+
   return (
     <section className="hero">
-      <p className="intro">Hi, my name is</p>
+      <motion.div variants={container} initial="hidden" animate="visible">
+        <motion.p className="intro" variants={item}>
+          Hi, my name is
+        </motion.p>
 
-      <h1>Janhavi Malushte</h1>
+        {/* 🔥 Animated Name */}
+        <motion.h1 className="fancy-name" variants={item}>
+          {name.split("").map((char, index) => (
+            <span
+              key={index}
+              className="letter"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
+        </motion.h1>
 
-      <h2>Frontend Engineer</h2>
+        <motion.h2 variants={item}>Frontend Engineer</motion.h2>
 
-      <p className="description">
-        I build modern, responsive web applications using React and JavaScript
-        with a focus on performance and user experience.
-      </p>
+        <motion.p className="description" variants={item}>
+          I build modern, responsive web applications using React and JavaScript
+          with a focus on performance and user experience.
+        </motion.p>
 
-      <div className="hero-buttons">
-        <a
-          href="/Janhavi_Malushte_Frontend_Developer.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hero-btn"
-        >
-          View Resume
-        </a>
+        {/* Buttons */}
+        <motion.div className="hero-buttons" variants={item}>
+          <motion.a
+            href="/Janhavi_Malushte_Frontend_Developer.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View Resume
+          </motion.a>
 
-        <a
-          href="/Janhavi_Malushte_Frontend_Developer.pdf"
-          download
-          className="resume-btn"
-        >
-          Download Resume
-        </a>
-      </div>
+          <motion.a
+            href="/Janhavi_Malushte_Frontend_Developer.pdf"
+            download
+            className="resume-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Download Resume
+          </motion.a>
+        </motion.div>
 
-      <div className="social-icons">
-        <a
-          href="https://github.com/Janhavi515"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub />
-        </a>
+        {/* Social Icons */}
+        <motion.div className="social-icons" variants={item}>
+          <motion.a
+            href="https://github.com/Janhavi515"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -5, scale: 1.2 }}
+          >
+            <FaGithub />
+          </motion.a>
 
-        <a
-          href="https://www.linkedin.com/in/janhavi-malushte"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin />
-        </a>
-      </div>
+          <motion.a
+            href="https://www.linkedin.com/in/janhavi-malushte"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -5, scale: 1.2 }}
+          >
+            <FaLinkedin />
+          </motion.a>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
