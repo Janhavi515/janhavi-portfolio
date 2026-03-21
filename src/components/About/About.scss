@@ -1,64 +1,100 @@
 .about {
-    padding: 100px 10%;
-    background: #020617;
-    color: #e2e8f0;
-  }
-  
+  padding: 100px 10%;
+  background: #020617;
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #38bdf8;
+  filter: blur(150px);
+  opacity: 0.1;
+  top: -100px;
+  right: -100px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-left h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-left span {
+  color: #38bdf8;
+}
+
+.about-left p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* RIGHT SIDE */
+.about-right {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  perspective: 1000px; /* for 3D */
+}
+
+/* Cards */
+.experience-card {
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow border effect */
+.experience-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(120deg, #38bdf8, transparent, #6366f1);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-card h3 {
+  font-size: 30px;
+  color: #38bdf8;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   .about-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 60px;
+    flex-direction: column;
   }
-  
-  .about-left {
-    flex: 1;
-  }
-  
-  .about-left h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .about-left span {
-    color: #38bdf8;
-  }
-  
-  .about-left p {
-    margin-bottom: 15px;
-    line-height: 1.7;
-  }
-  
+
   .about-right {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+    justify-content: center;
   }
-  
-  .experience-card {
-    background: #0f172a;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-  }
-  
-  .experience-card:hover {
-    transform: translateY(-8px);
-  }
-  
-  .experience-card h3 {
-    font-size: 28px;
-    color: #38bdf8;
-  }
-
-  @media (max-width: 768px) {
-
-    .about-container {
-      flex-direction: column;
-    }
-  
-    .about-right {
-      justify-content: center;
-    }
-  
-  }
+}
