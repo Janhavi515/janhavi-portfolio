@@ -1,56 +1,96 @@
-
 .contact {
-  padding: 60px 10%;
+  padding: 100px 10%;
   text-align: center;
   background: #020617;
   color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🔥 Background glow */
+.contact::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #38bdf8;
+  filter: blur(150px);
+  opacity: 0.15;
+  top: -100px;
+  left: -100px;
 }
 
 .contact h2 {
-  font-size: 36px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
 .contact p {
-  margin-bottom: 30px;
-  max-width: 500px;
+  margin-bottom: 40px;
+  max-width: 550px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
+/* Cards layout */
 .contact-links {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.contact-links a {
-  width: 100%;
-  max-width: 280px; 
-  padding: 12px 20px;
-  border: 1px solid #38bdf8;
-  border-radius: 6px;
-  text-align: center;
+/* 🔥 Glass cards */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #e2e8f0;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow border animation */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(120deg, #38bdf8, transparent, #6366f1);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
   transition: 0.3s;
 }
 
-.contact-links a:hover {
-  background: #38bdf8;
-  color: #020617;
+.contact-card:hover::before {
+  opacity: 1;
 }
 
-@media (min-width: 768px) {
-  .contact-links {
-    flex-direction: row;
-    justify-content: center;
-  }
+/* Hover */
+.contact-card:hover {
+  background: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+}
 
-  .contact-links a {
-    width: auto;
-  }
+.contact-card svg {
+  font-size: 18px;
+}
 
+/* Mobile */
+@media (max-width: 768px) {
   .contact {
-    padding: 100px 10%;
+    padding: 80px 6%;
   }
 }

@@ -1,7 +1,33 @@
 .footer {
-  padding: 30px;
+  padding: 25px 20px;
   text-align: center;
   background: #020617;
   color: #94a3b8;
   font-size: 14px;
+  position: relative;
+}
+
+/* 🔥 Gradient top border */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Built text */
+.footer-built {
+  font-size: 13px;
+  opacity: 0.8;
 }
