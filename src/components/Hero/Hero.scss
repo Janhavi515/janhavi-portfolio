@@ -1,86 +1,83 @@
 .hero {
-  min-height: 90vh;
+  width: 100%;
+  min-height: auto; 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; 
+  padding: 40px 20px 40px; 
+  box-sizing: border-box;
 }
 
 /* Intro */
 .intro {
   color: #38bdf8;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
 /* 🔥 Fancy Name */
 .fancy-name {
-  font-size: 64px;
+  font-size: clamp(28px, 8vw, 64px); /* 🔥 responsive */
   font-weight: 800;
   display: flex;
   flex-wrap: wrap;
+  line-height: 1.2;
 }
 
 /* Each letter */
 .letter {
   display: inline-block;
-
-  background: linear-gradient(
-    90deg,
-    #38bdf8,
-    #6366f1,
-    #38bdf8
-  );
-
+  background: linear-gradient(90deg, #38bdf8, #6366f1, #38bdf8);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   animation: gradientFlow 6s ease infinite;
 }
 
-/* Gradient animation */
 @keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Hover interaction */
 .letter:hover {
   transform: scale(1.2);
 }
 
 /* Subtitle */
 .hero h2 {
-  font-size: 42px;
+  font-size: clamp(20px, 6vw, 42px); /* 🔥 responsive */
   color: #94a3b8;
 }
 
 /* Description */
 .description {
+  width: 100%;
   max-width: 520px;
-  margin-top: 20px;
+  margin-top: 16px;
   line-height: 1.6;
+  font-size: clamp(14px, 4vw, 18px);
 }
 
 /* Buttons */
 .hero-buttons {
   display: flex;
-  gap: 20px;
-  margin-top: 30px;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-btn,
+.resume-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
 }
 
 .hero-btn {
-  padding: 12px 26px;
   border: 1px solid #38bdf8;
   color: #38bdf8;
-  border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
@@ -90,10 +87,7 @@
 }
 
 .resume-btn {
-  padding: 12px 26px;
   border: 1px solid #94a3b8;
-  border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
 .resume-btn:hover {
@@ -104,16 +98,28 @@
 /* Social Icons */
 .social-icons {
   display: flex;
-  gap: 20px;
-  font-size: 24px;
-  margin-top: 40px;
+  gap: 16px;
+  font-size: 22px;
+  margin-top: 30px;
 }
 
-.social-icons a {
-  transition: all 0.3s ease;
-}
+/* ===== TABLET & DESKTOP ===== */
+@media (min-width: 768px) {
+  .hero {
+    padding: 60px 10% !important;
+  }
 
-.social-icons a:hover {
-  color: #38bdf8;
-  filter: drop-shadow(0 0 8px #38bdf8);
+  .hero-buttons {
+    flex-direction: row; 
+    width: auto;
+  }
+
+  .hero-btn,
+  .resume-btn {
+    width: auto;
+  }
+
+  .social-icons {
+    font-size: 24px;
+  }
 }
