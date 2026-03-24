@@ -20,7 +20,7 @@ const item = {
   },
 };
 
-const Hero = () => {
+const Hero = ({openResume}) => {
   const name = "Janhavi Malushte";
 
   return (
@@ -46,19 +46,24 @@ const Hero = () => {
         <motion.h2 variants={item}>Frontend Engineer</motion.h2>
 
         <motion.p className="description" variants={item}>
-          I build modern, responsive web applications using React and JavaScript
-          with a focus on performance and user experience.
+          I build scalable web applications using React and Redux, focusing on
+          clean architecture, reusable components, and seamless user
+          experiences.
+        </motion.p>
+
+        <motion.p className="highlight" variants={item}>
+          🚀 Improved performance by 80% | 📈 Applications used by 10,000+ users
+        </motion.p>
+
+        <motion.p className="subtle-text" variants={item}>
+          Specializing in React, Redux, and frontend system design
         </motion.p>
 
         {/* Buttons */}
         <motion.div className="hero-buttons" variants={item}>
           <motion.a
-            href="/Janhavi_Malushte_Frontend_Developer.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={openResume}
             className="hero-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             View Resume
           </motion.a>
