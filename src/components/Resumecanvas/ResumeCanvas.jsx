@@ -16,7 +16,9 @@ const ResumeCanvas = forwardRef((props, ref) => {
           type="button"
           className="resume-btn-close"
           data-bs-dismiss="offcanvas"
-        >X</button>
+        >
+          ✕
+        </button>
       </div>
 
       {/* Body */}
@@ -25,7 +27,18 @@ const ResumeCanvas = forwardRef((props, ref) => {
           <h2>Janhavi Malushte</h2>
           <p className="resume-role">Frontend Engineer</p>
 
-          {/* Experience */}
+          {/* SUMMARY */}
+          <div className="resume-section">
+            <h3>Summary</h3>
+            <p className="p-tag-font">
+              Frontend Developer with 4 years of experience building scalable,
+              high-performance web applications using React and Redux. Focused
+              on clean architecture, reusable components, and delivering smooth
+              user experiences.
+            </p>
+          </div>
+
+          {/* EXPERIENCE */}
           <div className="resume-section">
             <h3>Experience</h3>
 
@@ -37,6 +50,7 @@ const ResumeCanvas = forwardRef((props, ref) => {
                 <li>Improved performance by 80%</li>
                 <li>Increased development efficiency by 30%</li>
                 <li>Worked with React, Redux, Node.js</li>
+                <li>Designed APIs improving data throughput by 50%</li>
               </ul>
             </div>
 
@@ -50,18 +64,40 @@ const ResumeCanvas = forwardRef((props, ref) => {
             </div>
           </div>
 
-          {/* Skills */}
+          {/* TECHNICAL SKILLS */}
           <div className="resume-section">
-            <h3>Skills</h3>
-            <p>
-              React, Redux, JavaScript, TypeScript, Node.js, Git, Tailwind
-            </p>
+            <h3>Technical Skills</h3>
+
+            <div className="resume-skill-group">
+              <strong>Frontend:</strong>
+              <p>
+                React, Redux, RTK Query, HTML5, CSS3, JavaScript, TypeScript
+              </p>
+            </div>
+
+            <div className="resume-skill-group">
+              <strong>Backend:</strong>
+              <p>Node.js, Symfony</p>
+            </div>
+
+            <div className="resume-skill-group">
+              <strong>Tools:</strong>
+              <p>Git, Docker, Jira, Agile, GitHub</p>
+            </div>
           </div>
 
-          {/* Education */}
+          {/* EDUCATION */}
           <div className="resume-section">
             <h3>Education</h3>
-            <p>MCA - SNDT University</p>
+            <p className="p-tag-font">MCA - SNDT University</p>
+          </div>
+
+          {/* CERTIFICATIONS */}
+          <div className="resume-section">
+            <h3>Certifications</h3>
+            <ul>
+              <li className="p-tag-font">ReactJS Course – NamasteDev (2023)</li>
+            </ul>
           </div>
         </div>
       </div>

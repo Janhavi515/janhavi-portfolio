@@ -1,4 +1,3 @@
-
 .custom-offcanvas {
     position: fixed !important;
     top: 0;
@@ -6,12 +5,12 @@
     height: 100vh;
     width: 450px;
     z-index: 1055;
-  
     background: #020617;
     color: #e2e8f0;
-  
     transform: translateX(-100%);
     transition: transform 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
   }
  
   /* When open */
@@ -28,7 +27,8 @@
   .offcanvas-header {
     border-bottom: 1px solid #1e293b;
     padding: 16px 20px;
-    display: flex;  
+    display: flex;
+    align-items: center;
   }
   
   .offcanvas-header h5 {
@@ -36,14 +36,25 @@
     font-size: 16px;
   }
   
-  /*BODY */
+  /* CLOSE BUTTON */
+  .resume-btn-close {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 0;
+  }
+  
+  /* BODY */
   .offcanvas-body {
     overflow-y: auto;
-    height: 95%;
+    height: 90%;
     padding: 20px;
   }
   
-  /* Smooth scrollbar (optional but nice) */
+  /* SCROLLBAR */
   .offcanvas-body::-webkit-scrollbar {
     width: 6px;
   }
@@ -56,7 +67,6 @@
   /* RESUME CONTENT */
   .resume-content h2 {
     font-size: 24px;
-    margin-bottom: 5px;
   }
   
   .resume-role {
@@ -71,10 +81,14 @@
   }
   
   .resume-section h3 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 10px;
     border-bottom: 1px solid #1e293b;
     padding-bottom: 5px;
+  }
+
+  .p-tag-font{
+    font-size: 15px;
   }
   
   /*ITEMS */
@@ -114,17 +128,21 @@
     color: #38bdf8;
   }
   
-  .resume-btn-close{
-    padding:4px;
-    margin-left: auto;  
-    background: transparent;
-    border: none;
-    color: #e2e8f0;
-    cursor: pointer;
-    border-radius: 0;
+  /* SKILL GROUP */
+  .resume-skill-group {
+    margin-bottom: 10px;
   }
   
-  /* MOBILE RESPONSIVE */
+  .resume-skill-group strong {
+    color: #38bdf8;
+    font-size: 15.5px;
+  }
+
+  .resume-skill-group p {
+    font-size: 15px;
+  }
+  
+  /* MOBILE */
   @media (max-width: 768px) {
     .custom-offcanvas {
       width: 100%;
