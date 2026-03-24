@@ -27,7 +27,7 @@ const Navbar = () => {
         whileHover={{ scale: 1.2, rotate: 5 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        JM
+        JM.
       </motion.div>
 
       <ul className="nav-links">
@@ -39,7 +39,7 @@ const Navbar = () => {
           >
             <motion.a
               href={`#${item.toLowerCase()}`}
-              whileHover={{ color: "#38bdf8" }}
+              whileHover={{ color: "#38bdf8" , x: 2}}
               className="nav-link"
             >
               {item}
