@@ -8,6 +8,7 @@ const ResumeCanvas = forwardRef((props, ref) => {
       className="offcanvas offcanvas-start custom-offcanvas"
       tabIndex="-1"
       id="resumeCanvas"
+      data-bs-backdrop="true"
     >
       {/* Header */}
       <div className="offcanvas-header">
@@ -89,7 +90,22 @@ const ResumeCanvas = forwardRef((props, ref) => {
           {/* EDUCATION */}
           <div className="resume-section">
             <h3>Education</h3>
-            <p className="p-tag-font">MCA - SNDT University</p>
+
+            <div className="resume-item">
+              <h4>Master of Computer Applications (MCA)</h4>
+              <span className="mb-0">
+                SNDT Women’s University, Mumbai | Aug 2018 – Jun 2021
+              </span>
+              <p className="p-tag-cgpa">CGPA: 8.03</p>
+            </div>
+
+            <div className="resume-item">
+              <h4>Bachelor of Computer Applications (BCA)</h4>
+              <span className="mb-0">
+                SNDT Women’s University, Ratnagiri | Aug 2015 – Jun 2018
+              </span>
+              <p className="p-tag-cgpa">CGPA: 7.00</p>
+            </div>
           </div>
 
           {/* CERTIFICATIONS */}
