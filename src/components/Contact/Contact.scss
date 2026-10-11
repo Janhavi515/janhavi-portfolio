@@ -1,10 +1,14 @@
 .contact {
-  padding: 100px 10%;
+  padding: 48px 10% 28px;
   text-align: center;
   background: #020617;
   color: #e2e8f0;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 36px 6% 20px;
+  }
 }
 
 /* 🔥 Background glow */
@@ -86,11 +90,4 @@
 
 .contact-card svg {
   font-size: 18px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .contact {
-    padding: 80px 6%;
-  }
 }

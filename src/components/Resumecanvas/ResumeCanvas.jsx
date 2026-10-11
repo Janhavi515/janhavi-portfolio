@@ -32,7 +32,7 @@ const ResumeCanvas = forwardRef((props, ref) => {
           <div className="resume-section">
             <h3>Summary</h3>
             <p className="p-tag-font">
-              Frontend Developer with 4 years of experience building scalable,
+              Frontend Developer with 4+ years of experience building scalable,
               high-performance web applications using React and Redux. Focused
               on clean architecture, reusable components, and delivering smooth
               user experiences.
@@ -57,7 +57,7 @@ const ResumeCanvas = forwardRef((props, ref) => {
 
             <div className="resume-item">
               <h4>Web Developer Intern</h4>
-              <span>Web2Attract | Jan 2021 – Jul 2021</span>
+              <span>Web2Attract | Jan 2021 – Jul 2021 (Remote)</span>
               <ul>
                 <li>Developed e-commerce platform using WordPress</li>
                 <li>Improved UI/UX and responsiveness</li>
