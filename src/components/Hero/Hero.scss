@@ -281,7 +281,29 @@
 .token-number { color: #fbbf24; }
 .token-boolean { color: #f43f5e; font-weight: 600; }
 
-/* ===== TABLET & DESKTOP ===== */
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .code-window {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .hero {
     padding: 50px 10% 40px !important;
@@ -292,12 +314,52 @@
     width: auto;
   }
 
-  .hero-btn,
-  .resume-btn {
+  .hero-btn {
     width: auto;
   }
 
   .social-icons {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 24px 6% 36px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    padding: 12px 18px;
+  }
+
+  .code-window {
+    font-size: 11px;
+    border-radius: 10px;
+
+    .window-header {
+      padding: 8px 12px;
+    }
+
+    .window-body {
+      padding: 12px 10px;
+
+      .code-line {
+        .line-num {
+          width: 18px;
+          margin-right: 8px;
+          font-size: 10px;
+        }
+
+        &.indent-1 { padding-left: 10px; }
+        &.indent-2 { padding-left: 18px; }
+      }
+    }
   }
 }
