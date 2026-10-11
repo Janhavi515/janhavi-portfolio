@@ -110,3 +110,43 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .skills-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-categories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-category-card {
+    padding: 18px 14px;
+    border-radius: 12px;
+
+    .category-header {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+
+      h3 {
+        font-size: 16.5px;
+      }
+    }
+
+    .skills-badge-list {
+      gap: 8px;
+
+      .skill-chip {
+        padding: 5px 10px;
+
+        .chip-name {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

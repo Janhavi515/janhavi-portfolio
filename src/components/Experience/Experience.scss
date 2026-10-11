@@ -188,3 +188,64 @@
     }
   }
 }
+
+@media (max-width: 640px) {
+  .timeline {
+    gap: 22px;
+  }
+
+  .timeline-marker {
+    .marker-dot {
+      width: 32px;
+      height: 32px;
+      font-size: 13px;
+    }
+  }
+
+  .experience-card {
+    padding: 16px 14px;
+    border-radius: 12px;
+
+    .card-top {
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+
+      .role-title {
+        font-size: 18px;
+      }
+
+      .company-name {
+        font-size: 14.5px;
+      }
+
+      .meta-info {
+        font-size: 12px;
+      }
+    }
+
+    .exp-summary {
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .achievements-list {
+      margin-bottom: 14px;
+
+      li {
+        font-size: 12.5px;
+        padding-left: 16px;
+        margin-bottom: 6px;
+      }
+    }
+
+    .exp-tech-stack {
+      gap: 6px;
+
+      .tech-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+      }
+    }
+  }
+}
