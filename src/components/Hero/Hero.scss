@@ -294,13 +294,17 @@
   }
 
   .hero-right {
-    max-width: 100%;
+    max-width: 580px;
     width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 
   .code-window {
-    max-width: 100%;
+    max-width: 580px;
     width: 100%;
+    margin: 0 auto;
   }
 }
 
