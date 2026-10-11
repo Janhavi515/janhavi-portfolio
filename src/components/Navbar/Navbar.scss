@@ -130,6 +130,21 @@
   }
 }
 
+/* Tablet Breakpoint (iPads 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 16px 6%;
+  }
+
+  .nav-links {
+    gap: 18px;
+
+    .nav-link {
+      font-size: 13.5px;
+    }
+  }
+}
+
 /* Mobile Breakpoint */
 @media (max-width: 768px) {
   .navbar {
