@@ -13,7 +13,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["About", "Skills", "Projects", "Contact"];
+  const navItems = ["About", "Experience", "Projects", "Skills", "Contact"];
 
   return (
     <motion.nav

@@ -1,9 +1,13 @@
 .about {
-  padding: 100px 10%;
+  padding: 48px 10%;
   background: #020617;
   color: #e2e8f0;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 36px 6%;
+  }
 }
 
 .about::before {
@@ -45,20 +49,24 @@
 /* RIGHT SIDE */
 .about-right {
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 20px;
   align-items: center;
+  justify-content: center;
   perspective: 1000px; /* for 3D */
 }
 
 /* Cards */
 .experience-card {
   background: #0f172a;
-  padding: 30px;
+  padding: 24px 20px;
+  min-width: 130px;
   border-radius: 12px;
   text-align: center;
   transition: 0.4s;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 /* Glow border effect */
