@@ -6,8 +6,8 @@ const projectsData = [
   {
     id: "patent-analytics",
     title: "Enterprise Patent Analytics & Search Engine",
-    category: "Enterprise Production",
-    badge: "🏢 Researchwire Production",
+    category: "Enterprise",
+    badge: "🏢 Researchwire",
     description:
       "A high-performance enterprise analytics platform enabling intellectual property professionals to query, filter, and analyze multi-million patent datasets with sub-second response times.",
     tech: ["React.js", "Redux Toolkit", "RTK Query", "JavaScript (ES6+)", "Symfony", "MySQL"],
@@ -40,8 +40,8 @@ const projectsData = [
   {
     id: "component-system",
     title: "Enterprise UI Component System & Architecture",
-    category: "System Architecture",
-    badge: "⚡ Internal Framework",
+    category: "Design System",
+    badge: "⚡ Architecture",
     description:
       "A centralized, reusable component library and design system architecture engineered to standardize UI patterns, accelerate sprint velocity, and maintain visual consistency across enterprise apps.",
     tech: ["React.js", "SCSS", "Framer Motion", "Design Tokens", "Component Architecture"],
@@ -72,8 +72,8 @@ const projectsData = [
   {
     id: "ecommerce-storefront",
     title: "Client E-Commerce Storefront & Optimization",
-    category: "Client Application",
-    badge: "🛍️ Web2Attract Client Work",
+    category: "E-Commerce",
+    badge: "🛍️ Web2Attract",
     description:
       "A responsive client e-commerce platform featuring dynamic product catalogs, optimized checkout flows, and streamlined mobile-first performance.",
     tech: ["JavaScript", "HTML5", "CSS3 / SCSS", "Responsive Design", "WordPress"],
