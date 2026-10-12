@@ -1,5 +1,5 @@
 .projects {
-  padding: 48px 10%;
+  padding: 48px 8%;
   background: #020617;
   color: #e2e8f0;
 
@@ -31,24 +31,39 @@
 /* Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1240px;
+  margin: 0 auto;
 
-  @media (min-width: 641px) and (max-width: 1024px) {
+  @media (max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    .project-card:nth-child(3) {
+      grid-column: 1 / -1;
+      max-width: 620px;
+      margin: 0 auto;
+      width: 100%;
+    }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 680px) {
     grid-template-columns: 1fr;
     gap: 16px;
+
+    .project-card:nth-child(3) {
+      grid-column: auto;
+      max-width: 100%;
+      margin: 0;
+    }
   }
 }
 
 /* Card */
 .project-card {
   position: relative;
-  padding: 26px;
+  padding: 22px 20px;
   border-radius: 16px;
   background: #0f172a;
   color: #e2e8f0;
@@ -67,9 +82,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-bottom: 14px;
 
     .project-badge {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
       font-size: 11px;
       font-weight: 600;
       color: #38bdf8;
@@ -77,13 +97,16 @@
       border: 1px solid rgba(56, 189, 248, 0.25);
       padding: 3px 10px;
       border-radius: 12px;
+      flex-shrink: 0;
     }
 
     .project-category {
       font-size: 11px;
       color: #94a3b8;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
   }
 
