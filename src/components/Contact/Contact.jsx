@@ -1,8 +1,18 @@
 import "./Contact.scss";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaCopy, FaCheck } from "react-icons/fa";
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("janhavimalushte@gmail.com").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    });
+  };
+
   const container = {
     hidden: {},
     visible: {
@@ -37,21 +47,36 @@ const Contact = () => {
         </motion.p>
 
         <motion.div className="contact-links" variants={item}>
+          {/* Copy Email Button */}
+          <motion.button
+            type="button"
+            onClick={handleCopyEmail}
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+            className={`contact-card copy-email-btn ${copied ? "copied" : ""}`}
+            aria-label="Copy email address"
+          >
+            {copied ? <FaCheck className="icon-success" /> : <FaCopy />}
+            <span>{copied ? "Copied to clipboard!" : "Copy Email"}</span>
+          </motion.button>
+
+          {/* Direct Email link */}
           <motion.a
             href="mailto:janhavimalushte@gmail.com"
-            whileHover={{ scale: 1.08, y: -5 }}
+            whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.95 }}
             className="contact-card"
           >
             <FaEnvelope />
-            <span>Email Me</span>
+            <span>Send Email</span>
           </motion.a>
 
+          {/* LinkedIn */}
           <motion.a
             href="https://www.linkedin.com/in/janhavi-malushte"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.08, y: -5 }}
+            whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.95 }}
             className="contact-card"
           >
@@ -59,11 +84,12 @@ const Contact = () => {
             <span>LinkedIn</span>
           </motion.a>
 
+          {/* GitHub */}
           <motion.a
             href="https://github.com/Janhavi515"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.08, y: -5 }}
+            whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.95 }}
             className="contact-card"
           >
@@ -75,7 +101,5 @@ const Contact = () => {
     </section>
   );
 };
-
-
 
 export default Contact;
