@@ -284,20 +284,34 @@
     }
 
     .close-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: none;
-      color: #94a3b8;
-      width: 32px;
-      height: 32px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      padding: 0;
+      margin: 0;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.2s ease;
+      font-size: 16px;
+      line-height: 1;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        display: block;
+        fill: currentColor;
+        pointer-events: none;
+      }
 
       &:hover {
         background: rgba(239, 68, 68, 0.2);
+        border-color: rgba(239, 68, 68, 0.4);
         color: #ef4444;
       }
     }

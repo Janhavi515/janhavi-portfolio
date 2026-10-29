@@ -187,7 +187,7 @@ const Projects = () => {
                 onClick={() => setActiveCaseStudy(null)}
                 aria-label="Close Case Study"
               >
-                <FaTimes />
+                <FaTimes size={16} />
               </button>
             </div>
 
