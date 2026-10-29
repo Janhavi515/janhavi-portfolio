@@ -1,7 +1,7 @@
 import "./Navbar.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaExternalLinkAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,44 +37,65 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`navbar ${scrolled ? "scrolled" : ""}`}
     >
-      <motion.a
-        href="#"
-        className="logo"
-        whileHover={{ scale: 1.15, rotate: 4 }}
-        transition={{ type: "spring", stiffness: 300 }}
-      >
-        JM.
-      </motion.a>
+      <div className="navbar-left">
+        <motion.a
+          href="#"
+          className="logo"
+          whileHover={{ scale: 1.15, rotate: 4 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          JM.
+        </motion.a>
+        <div className="status-pill">
+          <span className="pulse-dot"></span>
+          <span>Available for roles</span>
+        </div>
+      </div>
 
-      {/* Desktop & Tablet Navigation */}
-      <ul className="nav-links">
-        {navItems.map((item, index) => (
-          <motion.li
-            key={index}
-            whileHover={{ y: -2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <motion.a
-              href={`#${item.toLowerCase()}`}
-              whileHover={{ color: "#38bdf8" }}
-              className="nav-link"
+      <div className="navbar-right">
+        {/* Desktop & Tablet Navigation */}
+        <ul className="nav-links">
+          {navItems.map((item, index) => (
+            <motion.li
+              key={index}
+              whileHover={{ y: -2 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              {item}
-              <motion.span className="underline" layoutId="underline" />
-            </motion.a>
-          </motion.li>
-        ))}
-      </ul>
+              <motion.a
+                href={`#${item.toLowerCase()}`}
+                whileHover={{ color: "#38bdf8" }}
+                className="nav-link"
+              >
+                {item}
+                <motion.span className="underline" layoutId="underline" />
+              </motion.a>
+            </motion.li>
+          ))}
+        </ul>
 
-      {/* Mobile Menu Toggle Button */}
-      <button
-        type="button"
-        className="mobile-toggle-btn"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        aria-label="Toggle navigation menu"
-      >
-        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-      </button>
+        {/* Desktop Direct Resume Button */}
+        <motion.a
+          href="/Janhavi_Malushte_Frontend_Developer.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-resume-btn"
+          whileHover={{ y: -2, scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <span>Resume</span>
+          <FaExternalLinkAlt className="resume-icon" />
+        </motion.a>
+
+        {/* Mobile Menu Toggle Button */}
+        <button
+          type="button"
+          className="mobile-toggle-btn"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
 
       {/* Mobile Slide-down Menu */}
       <AnimatePresence>
@@ -98,6 +119,18 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              <li className="mobile-resume-item">
+                <a
+                  href="/Janhavi_Malushte_Frontend_Developer.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleLinkClick}
+                  className="mobile-resume-link"
+                >
+                  <span>View Resume</span>
+                  <FaExternalLinkAlt />
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}
