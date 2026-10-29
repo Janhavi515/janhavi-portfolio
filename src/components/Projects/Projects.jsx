@@ -105,6 +105,15 @@ const projectsData = [
 const Projects = () => {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
     <section id="projects" className="projects">
       <div className="section-header">
@@ -114,7 +123,11 @@ const Projects = () => {
 
       <div className="projects-grid">
         {projectsData.map((project) => (
-          <div className="project-card" key={project.id}>
+          <div
+            className="project-card"
+            key={project.id}
+            onMouseMove={handleMouseMove}
+          >
             <div className="card-header">
               <span className="project-badge">{project.badge}</span>
               <span className="project-category">{project.category}</span>

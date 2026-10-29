@@ -25,3 +25,15 @@ section {
 html {
   scroll-behavior: smooth;
 }
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #64748b, #94a3b8);
+  transform-origin: 0%;
+  z-index: 9999;
+  pointer-events: none;
+}

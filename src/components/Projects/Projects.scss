@@ -63,6 +63,7 @@
 /* Card */
 .project-card {
   position: relative;
+  overflow: hidden;
   padding: 22px 20px;
   border-radius: 16px;
   background: #0f172a;
@@ -72,10 +73,36 @@
   flex-direction: column;
   transition: all 0.35s ease;
 
+  /* Frosted subtle ambient spotlight */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+      rgba(255, 255, 255, 0.05),
+      transparent 75%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
   &:hover {
-    border-color: #38bdf8;
+    border-color: rgba(148, 163, 184, 0.45);
     transform: translateY(-5px);
-    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.8), 0 0 24px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.8), 0 0 24px rgba(148, 163, 184, 0.08);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  /* Ensure card contents stay above the subtle glow */
+  > * {
+    position: relative;
+    z-index: 1;
   }
 
   .card-header {

@@ -6,26 +6,37 @@ import { useEffect, useState } from "react";
 const About = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  const [count, setCount] = useState(0);
+  const [years, setYears] = useState(0);
+  const [users, setUsers] = useState(0);
+  const [speed, setSpeed] = useState(0);
 
-  //  Count animation
+  // Smooth ease-out counter animation
   useEffect(() => {
     if (inView) {
-      let start = 0;
-      const end = 4;
-      const duration = 1000;
+      const duration = 1100;
+      const startTime = performance.now();
 
-      const increment = end / (duration / 16);
+      const animate = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic curve for natural slowdown
+        const ease = 1 - Math.pow(1 - progress, 3);
 
-      const counter = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(counter);
+        setYears(Math.floor(4 * ease));
+        setUsers(Math.floor(10 * ease));
+        setSpeed(Math.floor(80 * ease));
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
         } else {
-          setCount(Math.floor(start));
+          setYears(4);
+          setUsers(10);
+          setSpeed(80);
         }
-      }, 16);
+      };
+
+      const animId = requestAnimationFrame(animate);
+      return () => cancelAnimationFrame(animId);
     }
   }, [inView]);
 
@@ -83,7 +94,7 @@ const About = () => {
             className="experience-card"
             whileHover={{ rotateY: 10, scale: 1.05 }}
           >
-            <h3>{count}+</h3>
+            <h3>{years}+</h3>
             <p>Years Experience</p>
           </motion.div>
 
@@ -91,7 +102,7 @@ const About = () => {
             className="experience-card"
             whileHover={{ rotateY: -10, scale: 1.05 }}
           >
-            <h3>10k+</h3>
+            <h3>{users}k+</h3>
             <p>Users Supported</p>
           </motion.div>
 
@@ -99,7 +110,7 @@ const About = () => {
             className="experience-card"
             whileHover={{ rotateY: 10, scale: 1.05 }}
           >
-            <h3>80%</h3>
+            <h3>{speed}%</h3>
             <p>Faster Data Load</p>
           </motion.div>
         </div>
